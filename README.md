@@ -1,6 +1,6 @@
 # EXO COWBOY
 
-![Screenshot of Exo Cowboy]('./assets/img/screenshot.png')
+![Screenshot of Exo Cowboy](https://i.imgur.com/RRFmnKE.png "Exo Cowboy")
 
 There are 6 enemy ships between you and home. Challenge the odds to make it through.
 
