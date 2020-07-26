@@ -1,0 +1,226 @@
+/*********************** FONTS ***********************/
+
+@font-face {
+    font-family: "Apple2";
+    src: url("./assets/fonts/Apple2.ttf");
+}
+
+@font-face {
+    font-family: "Hellovetica";
+    src: url("./assets/fonts/hellovetica.ttf");
+}
+
+@font-face {
+    font-family: "PixelCowboy";
+    src: url("./assets/fonts/PixelCowboy.otf");
+}
+
+/*********************** SYNTAX CLASSES ***********************/
+
+.text-enter {
+    color: #FF695A;
+}
+
+.text-hero {
+    color: #8CDAFF;
+}
+
+.text-alien {
+    color: #41de95;
+}
+
+.text-damage {
+    color: #f3c220;
+}
+
+/*********************** GLOBAL STYLES ***********************/
+
+body {
+    font-family: 'Apple2', sans-serif;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* background: url('./assets/img/space-sm.png'); */
+}
+
+header {
+    color: cornsilk;
+}
+
+h1 {
+    font-family: "PixelCowboy", sans-serif;
+    color: #fa6557;
+    text-shadow: 4px 4px #1601ff;
+}
+
+main {
+    height: 100%;
+    width: 95%;
+    max-width: 860px;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background: white;
+    padding: 1em;
+    font-family: 'Apple2';
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #747d88;
+    color: #2e2c3b;
+}
+
+button:active, button:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+::-webkit-scrollbar-track {
+    background: black; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #99cbf7; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/*********************** ELEMENT STYLES ***********************/
+
+#battle_wrap {
+    min-height: 12em;
+    border: 2px solid white;
+    display: flex;
+}
+
+#battle_inner_stats {
+    font-size: 0.8em;
+    flex: 2;
+    background: blue;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#battle_inner_enemy, #battle_inner_player {
+    flex: 1;
+}
+
+#battle_inner_enemy {
+    background: url('./assets/img/alien-fleet-profile.gif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#battle_inner_player {
+    background: url('./assets/img/player-profile.gif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#enemy_stats_wrap {
+    border-right: 2px solid white;
+    width: 50%;
+    padding: 1em;
+}
+
+#player_stats_wrap {
+    width: 50%;
+    padding: 1em;
+}
+
+#game_status_wrap{
+    min-height: 4em;
+    border: 2px solid white;
+    background: black;
+    margin-top: 1em;
+}
+
+#game_status {
+    font-size: 0.8em;
+    padding: 1em 2em;
+}
+
+#control_panel {
+    margin: 1em 0;
+}
+
+#activity_log {
+    border: 2px solid white;
+    max-height: 50vh;
+    background: #99cbf7;
+    margin-bottom: 1em;
+}
+
+#activity_log p {
+    padding: 0.5em;
+    color: white;
+    font-size: 0.8em;
+}
+
+#activity_log h3 {
+    background: black;
+    padding: 1em;
+    margin: 0;
+    border-bottom: 1px solid azure;
+}
+
+#activity_log_inner {
+    background: black;
+    height: 12em;
+    padding: 1em;
+    overflow-y: scroll;
+}
+
+/*********************** MEDIA QUERIES ***********************/
+
+
+@media screen and (max-width: 500px) {
+    #battle_wrap {
+        flex-direction: column;
+    }
+    #battle_inner_player, #battle_inner_enemy {
+        min-height: 4em;
+    }
+    #control_panel {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/*********************** ANIMATIONS ***********************/
+
+.shake {
+    animation: shake 0.75s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+      transform: translateY(0px);
+    }
+    12% {
+      transform: translateY(-10.89px);
+    }
+  
+    24% {
+      transform: translateY(-12.56px);
+    }
+    40% {
+      transform: translateY(5.56px);
+    }
+    70% {
+      transform: translateY(-5.28px);
+    }
+  }

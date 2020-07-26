@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exo Cowboy</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+            <h1>Exo Cowboy</h1>
+        </header>
+        <main>
+            <section id="battle_wrap">
+                <div class="battle_inner" id="battle_inner_enemy"></div>
+                <div class="battle_inner" id="battle_inner_stats">
+                    <div id="enemy_stats_wrap">
+                        <p class="stats_row"><span id="enemy_stats_name">Unknown</span></p>
+                        <p class="stats_row">Health: <span id="enemy_stats_health"></span></p>
+                        <p class="stats_row">Power: <span id="enemy_stats_power"></span></p>
+                        <p class="stats_row">Acc: <span id="enemy_stats_accuracy"></span></p>
+                    </div>
+                    <div id="player_stats_wrap">
+                        <p class="stats_row"><span id="player_stats_name"></span></p>
+                        <p class="stats_row">Health: <span id="player_stats_health"></span></p>
+                        <p class="stats_row">Power: <span id="player_stats_power"></span></p>
+                        <p class="stats_row">Acc: <span id="player_stats_accuracy"></span></p>
+                    </div>
+                </div>
+                <div class="battle_inner" id="battle_inner_player"></div>
+            </section>
+            <section id="game_status_wrap">
+                <p id="game_status">An <span class="text-alien">alien fleet</span> approaches. Press start to meet them in battle.</p>
+            </section>
+            <section id="control_panel">
+                <button id="start_game">Start</button>
+                <button id="start_fight">Fight</button>
+                <button id="retreat">Run</button>
+                <button id="reset">Reset</button>
+            </section>
+            <section id="activity_log">
+                <div id="activity_header">
+                    <h3>Battle Log</h3>
+                </div>
+                <div id="activity_log_inner"></div>
+            </section>
+        </main>
+        <script src="app.js" async defer></script>
+    </body>
+</html>
