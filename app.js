@@ -241,7 +241,7 @@ const runBattle = (player, motherShip) => {
 // function to retreat and rest for a turn
 
 const retreat = () => {
-    const healthBoost = randomize(2,6);
+    const healthBoost = randomize(2,4);
     Hero.hull += healthBoost;
     Hero.updateStats();
     motherShip.fleetSize += 1;
