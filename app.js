@@ -229,9 +229,11 @@ const runBattle = (player, motherShip) => {
         motherShip.aliens.shift();
         if (motherShip.aliens.length === 0 && player.hull > 0) {
             newGame.updateStatus(`******** YOU HAVE DEFEATED THE WHOLE FLEET **********`);
+            rest_button.disabled = true;
         } else if (player.hull <= 0) {
             newGame.updateStatus(`<span class="text-hero">${player.name}</span> was defeated 
             after destroying <span class="text-damage">${motherShip.fleetSize - motherShip.aliens.length - 1}</span> enemies!`);
+            rest_button.disabled = true;
         } else {
             newGame.updateStatus(`<span class="text-damage">${motherShip.aliens.length}</span> enemy ships remain.`)
         }
