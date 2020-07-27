@@ -11,7 +11,7 @@ const start_game = document.querySelector('#start_game');
 
 const fight_button = document.querySelector('#start_fight');
 
-const run_button = document.querySelector('#retreat');
+const rest_button = document.querySelector('#retreat');
 
 const reset_button = document.querySelector('#reset');
 
@@ -238,11 +238,16 @@ const runBattle = (player, motherShip) => {
     }
 }
 
-// function to retreat
+// function to retreat and rest for a turn
 
 const retreat = () => {
-    newGame.updateStatus(`<span class="text-hero">${Hero.name}</span> has retreated back to home base and forfeited their command. 
-    Click <span class="text-damage">'Reset'</span> to start again.`)
+    const healthBoost = randomize(2,6);
+    Hero.hull += healthBoost;
+    Hero.updateStats();
+    motherShip.fleetSize += 1;
+    motherShip.generateAlien();
+    newGame.updateStatus(`<span class="text-hero">${Hero.name}</span> recovered ${healthBoost} health, but the <span class="text-alien">aliens</span> recruited a new ship while you rested.`);
+    console.log(Hero, motherShip.aliens);
 }
 
 // function to reset game
@@ -251,6 +256,7 @@ const reset = () => {
     activity_log.innerHTML = '';
     Hero.hull = 15;
     Hero.updateStats();
+    motherShip.fleetSize = 6;
     motherShip.aliens = [];
     motherShip.generateFleet();
     motherShip.aliens[0].updateStats();
@@ -273,7 +279,7 @@ const init = () => {
 // disable fight, run, and reset until game has started
 
 fight_button.disabled = true;
-run_button.disabled = true;
+rest_button.disabled = true;
 reset_button.disabled = true;
 
 // run first match, and enable all other buttons after start
@@ -283,7 +289,7 @@ start_game.onclick = (e) => {
     screenShake();
     e.target.disabled = true;
     fight_button.disabled = false;
-    run_button.disabled = false;
+    rest_button.disabled = false;
     reset_button.disabled = false;
 }
 
@@ -296,11 +302,9 @@ fight_button.onclick = () => {
 
 // run away home
 
-run_button.onclick = () => {
+rest_button.onclick = (e) => {
     retreat();
-    start_game.disabled = true;
-    fight_button.disabled = true;
-    run_button.disabled = true;
+    e.target.disabled = true;
 }
 
 // run reset and enable all buttons
@@ -309,9 +313,9 @@ reset_button.onclick = () => {
     reset();
     newGame.updateStatus('An <span class="text-alien">alien fleet</span> approaches. Hit start to meet them in battle.');
     start_game.disabled = false;
-    fight_button.disabled = false;
-    run_button.disabled = false;
-    reset_button.disabled = false;
+    fight_button.disabled = true;
+    rest_button.disabled = true;
+    reset_button.disabled = true;
 }
 
 // load initial state
