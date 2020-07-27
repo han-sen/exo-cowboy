@@ -1,6 +1,6 @@
 # EXO COWBOY
 
-![Screenshot of Exo Cowboy](https://i.imgur.com/RRFmnKE.png "Exo Cowboy")
+![Screenshot of Exo Cowboy](https://i.imgur.com/k1Fu8Fo.png "Exo Cowboy")
 
 Live demo: https://han-sen.github.io/exo-cowboy/
 
